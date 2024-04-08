@@ -1,0 +1,11 @@
+{
+  "name": "mern-podcast",
+  "version": "1.0.0",
+  "description": "a web app that facilitates podcast and will be available as a web app, desktop app and phone app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lawrence ochieng odhiambo",
+  "license": "ISC"
+}
