@@ -49,7 +49,6 @@ app.use(express.json());
 //======================================================================================================
 app.get('/', (req, res) => {
     res.send('Hello World');
-    console.log('Loaded MongoDB URI:', process.env.MONGODB_URI);
 }
 );
 
