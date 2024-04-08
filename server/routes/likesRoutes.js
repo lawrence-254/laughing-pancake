@@ -5,7 +5,6 @@ const likeController = require('../controllers/likeController');
 
 router.get('/api/likes/episode/:episodeId', likeController.getAllLikes);
 router.post('/api/likes/episode/:episodeId', likeController.addLike);
-router.put('/api/likes/:id', likeController.updateLike);
 router.delete('/api/likes/:id', likeController.deleteLike);
 
 
