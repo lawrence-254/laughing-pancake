@@ -9,7 +9,7 @@ const dbConnection = require('./configs/dbConfig');
 //======================================================================================================
 //routes
 const userRoutes = require('./routes/userRoutes');
-// const podcastRoutes = require('./routes/podcastRoutes');
+const podcastRoutes = require('./routes/podcastRoutes');
 // const episodeRoutes = require('./routes/episodeRoutes');
 // const commentRoutes = require('./routes/commentRoutes');
 // const likeRoutes = require('./routes/likeRoutes');
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', userRoutes);
-// app.use('/api/podcast', podcastRoutes);
+app.use('/api/podcast', podcastRoutes);
 // app.use('/api/episode', episodeRoutes);
 // app.use('/api/comment', commentRoutes);
 // app.use('/api/like', likeRoutes);
