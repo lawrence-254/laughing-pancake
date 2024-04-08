@@ -1,5 +1,12 @@
-// ./configs/dbConnection.js
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+// Debugging dotenv loading
+const result = dotenv.config();
+if (result.error) {
+    console.error('Error loading .env file:', result.error);
+    throw result.error;
+}
 
 const dbConnection = async () => {
     try {
