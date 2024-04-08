@@ -33,3 +33,5 @@ const register = asyncHandler(async (req, res, next) => {
     }
 }
 );
+
+module.exports = { register };

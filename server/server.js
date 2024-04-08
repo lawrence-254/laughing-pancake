@@ -1,15 +1,10 @@
 #!/usr/bin/env node
 const express = require('express');
-// const bodyParser = require('body-parser');
 const cors = require('cors');
-// const passport = require('passport');
-const path = require('path');
-// __dirname + './/.env'
-require('dotenv').config({ path: './.env' });
 const dbConnection = require('./configs/dbConfig');
 //======================================================================================================
 //routes
-// const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 // const podcastRoutes = require('./routes/podcastRoutes');
 // const episodeRoutes = require('./routes/episodeRoutes');
 // const commentRoutes = require('./routes/commentRoutes');
@@ -20,16 +15,6 @@ const dbConnection = require('./configs/dbConfig');
 
 // Load environment variables
 
-
-
-
-//db
-dbConnection().then(() => {
-    console.log('Database connection established. Starting server...');
-}).catch((error) => {
-    console.error('Error connecting to the database:', error);
-});;
-//end of db
 
 const app = express();
 
@@ -47,23 +32,39 @@ app.use(express.json());
 
 // require('./config/passport')(passport);
 //======================================================================================================
-app.get('/', (req, res) => {
-    res.send('Hello World');
-}
-);
 
-// app.use('/api/user', userRoutes);
-// app.use('/api/podcast', podcastRoutes);
-// app.use('/api/episode', episodeRoutes);
-// app.use('/api/comment', commentRoutes);
-// app.use('/api/like', likeRoutes);
-// app.use('/api/subscription', subscriptionRoutes);
-// app.use('/api/playback', playbackRoutes);
+
+//db
+
+// Connect to the database
+dbConnection()
+    .then(() => {
+        console.log('Database connection established. Starting server...');
+        // Define your routes
+        app.get('/', (req, res) => {
+            res.send('Hello World');
+        });
+        //======================================================================================================
+
+        app.use('/api/user', userRoutes);
+        // app.use('/api/podcast', podcastRoutes);
+        // app.use('/api/episode', episodeRoutes);
+        // app.use('/api/comment', commentRoutes);
+        // app.use('/api/like', likeRoutes);
+        // app.use('/api/subscription', subscriptionRoutes);
+        // app.use('/api/playback', playbackRoutes);
+        //======================================================================================================
+
+        // Start the server
+        const PORT = process.env.PORT || 5000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('Error connecting to the database:', error);
+    });
+
+
 
 //=======================================================================================================
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-}
-);
