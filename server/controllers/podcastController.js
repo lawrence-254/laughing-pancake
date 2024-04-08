@@ -3,6 +3,7 @@ const ErrorResponse = require('../utils/errorResponse');
 
 
 const addPodcast = asyncHandler(async (req, res, next) => {
+
     try {
         const { title, description, coverImage, category } = req.body;
 
@@ -22,7 +23,7 @@ const addPodcast = asyncHandler(async (req, res, next) => {
 }
 );
 
-const getPodcasts = asyncHandler(async (req, res, next) => {
+const getAllPodcasts = asyncHandler(async (req, res, next) => {
     try {
         const podcasts = await Podcast.find().populate('creator', 'username');
         res.status(200).json({ success: true, data: podcasts });
@@ -94,4 +95,4 @@ const deletePodcast = asyncHandler(async (req, res, next) => {
 }
 );
 
-module.exports = { addPodcast, getPodcasts, getPodcast, updatePodcast, deletePodcast };
+module.exports = { addPodcast, getAllPodcasts, getPodcast, updatePodcast, deletePodcast };

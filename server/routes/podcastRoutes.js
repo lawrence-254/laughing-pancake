@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const podcastController = require('../controllers/podcastController');
+const { getPodcast, getAllPodcasts, addPodcast, updatePodcast, deletePodcast } = require('../controllers/podcastController');
 
 
-router.get('/api/podcasts', podcastController.getAllPodcasts);
-router.get('/api/podcast/:id', podcastController.getPodcast);
-router.post('/api/podcast', podcastController.addPodcast);
-router.put('/api/podcast/:id', podcastController.updatePodcast);
-router.delete('/api/podcast/:id', podcastController.deletePodcast);
+router.get('/api/podcasts', getAllPodcasts);
+router.get('/api/podcast/:id', getPodcast);
+router.post('/api/podcast', addPodcast);
+router.put('/api/podcast/:id', updatePodcast);
+router.delete('/api/podcast/:id', deletePodcast);
 
 
 module.exports = router;
