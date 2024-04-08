@@ -1,15 +1,15 @@
+// ./configs/dbConnection.js
 const mongoose = require('mongoose');
 
-// Connect to the database
 const dbConnection = async () => {
+    require('dotenv').config({ path: '.././.env' });
+    console.log('Loaded MongoDB URI:', process.env.MONGODB_URI);
     try {
-        await mongoose.connect(process.env.MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log('Connected to the database');
     } catch (error) {
-        console.log('Error connecting to the database', error);
+        console.error('Error connecting to the database:', error.message);
+        throw error;
     }
 };
 
