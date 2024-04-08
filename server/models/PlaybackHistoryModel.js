@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const User = require('./UserModel');
+const Episode = require('./EpisodeModel');
 
 const PlaybackHistorySchema = new mongoose.Schema({
     user: {

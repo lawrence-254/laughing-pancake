@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-co
+const Podcast = require('./PodcastModel');
 
 const UserSchema = new mongoose.Schema({
     username: {

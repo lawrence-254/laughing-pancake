@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const User = require('./UserModel');
+const Podcast = require('./PodcastModel');
 
 const SubscriptionSchema = new mongoose.Schema({
     user: {

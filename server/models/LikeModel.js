@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const User = require('./UserModel');
+const Episode = require('./EpisodeModel');
 
 const LikeSchema = new mongoose.Schema({
     user: {

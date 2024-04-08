@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Podcast = require('./PodcastModel');
 
 const EpisodeSchema = new mongoose.Schema({
     title: {
