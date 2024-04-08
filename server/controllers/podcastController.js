@@ -11,11 +11,11 @@ const addPodcast = asyncHandler(async (req, res, next) => {
             return next(new ErrorResponse('Please provide all fields', 400));
         }
 
-        const podcast = await Podcast.create(
+        const newPodcast = await Podcast.create(
             { title, description, coverImage, category, creator: req.user._id }
         );
 
-        res.status(201).json({ success: true, data: podcast });
+        res.status(201).json({ success: true, data: newPodcast });
     }
     catch (error) {
         next(error);
