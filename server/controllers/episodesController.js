@@ -1,8 +1,9 @@
 const Episode = require('../models/EpisodesModels');
 const Podcast = require('../models/PodcatsModel');
 const ErrorResponse = require('../utils/errorResponse');
+const asyncHandler = require('express-async-handler');
 
-const addEpisode = async (req, res, next) => {
+const addEpisode = asyncHandler(async (req, res, next) => {
     try {
         const { title, description, mediaUrl, duration, podcastId } = req.body;
         if (!title || !description || !mediaUrl || !duration) {
@@ -26,7 +27,7 @@ const addEpisode = async (req, res, next) => {
         next(error);
     }
 }
-
+);
 const getAllEpisodes = async (req, res, next) => {
     try {
         const episodes = await Episode.find().populate('podcast', 'title');
