@@ -4,6 +4,8 @@
   "description": "a web app that facilitates podcast and will be available as a web app, desktop app and phone app",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lawrence ochieng odhiambo",
@@ -15,7 +17,9 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.3.0",
+    "mongoose": "^8.3.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.0"
   }
 }
