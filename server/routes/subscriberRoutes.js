@@ -4,7 +4,7 @@ const subscriberController = require('../controllers/subscriberController');
 
 
 router.get('/api/subscribers', subscriberController.getAllSubscribers);
-router.post('/api/subscriber/podcast/:podcastId', subscriberController.addSubscriber);
+router.post('/api/subscriber/podcast/:podcastId', subscriberController.subscribe);
 router.delete('/api/subscriber/podcast/:podcastId', subscriberController.deleteSubscriber);
 
 
