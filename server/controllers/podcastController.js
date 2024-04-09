@@ -1,5 +1,5 @@
-const Podcast = require('../models/podcastModel');
-const Episode = require('../models/episodeModel');
+const Podcast = require('../models/PodcatsModel');
+const Episode = require('../models/EpisodesModels');
 const asyncHandler = require('express-async-handler');
 const ErrorResponse = require('../utils/errorResponse');
 
