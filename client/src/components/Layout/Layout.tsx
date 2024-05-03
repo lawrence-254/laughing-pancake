@@ -57,7 +57,6 @@ function Layout(props:{
           <Navbar />
           <InnerLayoutContainer>
             <MobileLayout>
-              <div>Mobile Layout</div>
               {children}
             </MobileLayout>
           </InnerLayoutContainer>
