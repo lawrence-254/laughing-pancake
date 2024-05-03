@@ -74,7 +74,7 @@ function Navbar() {
       <Logo><SiGooglepodcasts />witter</Logo>
       {isMobile && (
         <MobileMenuButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? 'Close' : 'Menu'}
+          {isMobileMenuOpen ? 'X' : activeLink}
         </MobileMenuButton>
       )}
       <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
