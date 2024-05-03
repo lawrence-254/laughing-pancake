@@ -22,22 +22,22 @@ interface Props {
 }
 
 const PodcastList: React.FC<Props> = ({ podcastData }) => {
-    return (
-        <>
-            {podcastData.map((podcast, index) => (
-                <div key={index}>
-                    <h1>{podcast.category}</h1> {/* Display category for each podcast */}
-                    {podcast.episodes.map((episode, eIndex) => (
-                        <Carousel key={eIndex}>
-                            <h1>run</h1>
-                            <PodcastContainer episode={episode} />
-                        </Carousel>
-                    ))}
-                </div>
+  return (
+    <>
+      {podcastData.map((podcast, index) => (
+        <div key={index}>
+          <h1>{podcast.category}</h1>
+          <Carousel>
+            {podcast.episodes.map((episode, eIndex) => (
+              <div key={eIndex}>
+                <PodcastContainer episode={episode} />
+              </div>
             ))}
-        </>
-    );
+          </Carousel>
+        </div>
+      ))}
+    </>
+  );
 };
 
 export default PodcastList;
-
