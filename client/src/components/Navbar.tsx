@@ -27,8 +27,8 @@ color: #333333'
 `;
 
 function Navbar() {
-  const [activeLink, setActiveLink]=useState('Overview');
-  const linkTitles = ['Overview', 'Examples', 'Tour', 'Blogs', 'Help']
+  const [activeLink, setActiveLink]=useState('Home');
+  const linkTitles = ['Home', 'My Podcasts', 'Favorite Podcast', 'Discover Podcasts', 'My Account']
   return (
     <Nav>
       <Logo></Logo>
