@@ -1,6 +1,8 @@
+import Layout from "../components/Layout/Layout"
+
 const DiscoverPodcasts = () => {
   return (
-    <div>DiscoverPodcasts</div>
+    <Layout>DiscoverPodcasts</Layout>
   )
 }
 

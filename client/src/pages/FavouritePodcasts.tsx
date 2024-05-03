@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../components/Layout/Layout'
 
 const FavouritePodcasts = () => {
   return (
-    <div>FavouritePodcasts</div>
+    <Layout>FavouritePodcasts</Layout>
   )
 }
 

@@ -55,13 +55,11 @@ function Layout(props:{
     </LayoutContainer>
     ):(
         <LayoutContainer>
-          {/* <Navbar /> */}
+          <Navbar />
           <InnerLayoutContainer>
             <MobileLayout>
-              {/* Mobile-specific content
               <div>Mobile Layout</div>
-              {children} */}
-              mobile
+              {children}
             </MobileLayout>
           </InnerLayoutContainer>
           <Footer />

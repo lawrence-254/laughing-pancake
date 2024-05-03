@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '../components/Layout/Layout'
 
 const MayAccount = () => {
   return (
-    <div>MayAccount</div>
+  <Layout>
+    account
+  </Layout>
   )
 }
 
