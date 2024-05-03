@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <FooterContainer>
         <div className="">
-            <h1>Train your app with lobe</h1>
+            <h5>Tell your story</h5>
         </div>
         <hr />
         <div className=""></div>

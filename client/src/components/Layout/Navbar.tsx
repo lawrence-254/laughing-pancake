@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { SiGooglepodcasts } from "react-icons/si";
 
 const Nav = styled.nav`
   display: flex;
@@ -70,8 +71,8 @@ function Navbar() {
 
   return (
     <Nav>
+      <Logo><SiGooglepodcasts />witter</Logo>
       {isMobile && (
-
         <MobileMenuButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? 'Close' : 'Menu'}
         </MobileMenuButton>
