@@ -63,13 +63,14 @@ const podcastData = [
   }
 ];
 
+import Layout from '../components/Layout/Layout';
 import PodcastList from '../components/containers/PodcastList';
 
 const Home = () => {
   return (
-    <div>
+    <Layout>
       <PodcastList podcastData={podcastData} />
-    </div>
+    </Layout>
   );
 };
 

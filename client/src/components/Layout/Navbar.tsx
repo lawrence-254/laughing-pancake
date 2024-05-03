@@ -52,10 +52,13 @@ const MobileMenuButton = styled.button`
 `;
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState('Home');
-  const linkTitles = ['Home', 'My Podcasts', 'Favorite Podcast', 'Discover Podcasts', 'My Account'];
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<string>('Home');
+  const isLoggedIn: boolean = false;
+  const linkTitles: string[] = isLoggedIn
+    ? ['Home', 'My Podcasts', 'Favorite Podcast', 'Discover Podcasts', 'My Account']
+    : ['Home', 'Discover Podcasts', 'Login', 'Sign up'];
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
