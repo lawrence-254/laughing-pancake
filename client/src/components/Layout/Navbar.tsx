@@ -10,7 +10,7 @@ const Nav = styled.nav`
   width: 90%;
 `;
 
-const NavLinks = styled.div`
+const NavLinks = styled.div<{ isMobileMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
