@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { SiGooglepodcasts } from "react-icons/si";
-import Searchbar from '../containers/Searchbar';
+import Searchbox from '../containers/Searchbox';
 
 const Nav = styled.nav`
   display: flex;
@@ -92,7 +92,7 @@ function Navbar() {
           </NavLink>
         ))}
       </NavLinks>
-      <Searchbar/>
+      <Searchbox/>
     </Nav>
   );
 }

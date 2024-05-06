@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Searchbar = () => {
+const Searchbox = () => {
   return (
     <div>
-      search
+      
     </div>
   )
 }
 
-export default Searchbar
+export default Searchbox
