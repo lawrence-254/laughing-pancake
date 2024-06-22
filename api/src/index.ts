@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
 dotenv.config()
+
+import authRoute from "./routes/auth";
 
 
 const app = express()
@@ -13,6 +16,7 @@ app.listen(PORT, () => {
     console.log(PORT);
 })
 
+app.use('/api/auth', authRoute)
 app.get('/', (req, res) => {
     res.send('Hello World ');
 
