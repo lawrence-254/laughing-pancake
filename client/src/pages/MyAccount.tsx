@@ -1,12 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 
-const MayAccount = () => {
+const MyAccount = () => {
   return (
-  <Layout>
-    account
-  </Layout>
+    <Layout>MyAccount</Layout>
   )
 }
 
-export default MayAccount
+export default MyAccount
