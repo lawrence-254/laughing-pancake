@@ -91,6 +91,7 @@ function Navbar() {
             onClick={() => {
               setActiveLink(title);
               setIsMobileMenuOpen(false);
+
             }}
           >
             <NavLink $active={title === activeLink}>
@@ -99,17 +100,7 @@ function Navbar() {
           </RouterNavLink>
         ))}
       </NavLinks>
-      {/* <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
-        {linkTitles.map((title: string, index: number) => (
-          <NavLink
-            $active={title === activeLink}
-            key={index}
-            onClick={() => setActiveLink(title)}
-          >
-            {title}
-          </NavLink>
-        ))}
-      </NavLinks> */}
+
       <Searchbox/>
     </Nav>
   );

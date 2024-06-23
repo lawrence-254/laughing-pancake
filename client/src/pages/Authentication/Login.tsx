@@ -2,6 +2,7 @@ import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as yup from 'yup';
+import Cookies from 'universal-cookie'
 
 interface IFormInput {
   email: string;
@@ -10,6 +11,7 @@ interface IFormInput {
 }
 
 const Login: React.FC = () => {
+  const cookies = new Cookies();
   const schema = yup.object().shape({
     email: yup.string().email().required("Email is required"),
     username: yup.string().required("Username is required"),
@@ -38,6 +40,7 @@ const onSubmit: SubmitHandler<IFormInput> = async (data) => {
       }
 
       const responseData = await response.json();
+      cookies.set("token", responseData.token)
       console.log(responseData);
     } catch (error) {
       console.error('Error:', error);
