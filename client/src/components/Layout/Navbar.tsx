@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { SiGooglepodcasts } from "react-icons/si";
 import Searchbox from '../containers/Searchbox';
+import { NavLink as RouterNavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
   display: flex;
@@ -56,8 +57,8 @@ function Navbar() {
   const [activeLink, setActiveLink] = useState<string>('Home');
   const isLoggedIn: boolean = false;
   const linkTitles: string[] = isLoggedIn
-    ? ['Home', 'My Podcasts', 'Favorite Podcast', 'Discover Podcasts', 'My Account']
-    : ['Home', 'Discover Podcasts', 'Login', 'Sign up'];
+    ? ['Home', 'My Podcasts', 'Favorite Podcast', 'Podcasts', 'My Account']
+    : ['Home', 'Podcasts', 'Login'];
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
@@ -81,7 +82,24 @@ function Navbar() {
           {isMobileMenuOpen ? 'X' : activeLink}
         </MobileMenuButton>
       )}
-      <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
+       <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
+        {linkTitles.map((title: string, index: number) => (
+          <RouterNavLink
+            to={`/${title.toLowerCase().replace(/ /g, '-')}`}
+            key={index}
+            style={{ textDecoration: 'none' }}
+            onClick={() => {
+              setActiveLink(title);
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            <NavLink $active={title === activeLink}>
+              {title}
+            </NavLink>
+          </RouterNavLink>
+        ))}
+      </NavLinks>
+      {/* <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
         {linkTitles.map((title: string, index: number) => (
           <NavLink
             $active={title === activeLink}
@@ -91,7 +109,7 @@ function Navbar() {
             {title}
           </NavLink>
         ))}
-      </NavLinks>
+      </NavLinks> */}
       <Searchbox/>
     </Nav>
   );
