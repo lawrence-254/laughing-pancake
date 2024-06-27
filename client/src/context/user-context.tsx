@@ -17,13 +17,17 @@ interface UserContextProps {
 
 const UserContext=createContext<UserContextProps|undefined>(undefined!);
 
-export const UserProvider: React.FC = ({children}) => {
+interface UserProviderProps {
+    children: React.ReactNode;
+}
+
+export const UserProvider =(props: UserProviderProps) => {
     const [user, setUser] = React.useState<User | null>(null);
     const [client, setClient] = React.useState<StreamVideoClient | undefined>(undefined);
 
     return (
         <UserContext.Provider value={{user, setUser, client, setClient}}>
-            {children}
+            {props.children}
         </UserContext.Provider>
     )
 }
