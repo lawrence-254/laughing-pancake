@@ -1,5 +1,5 @@
 import { StreamVideoClient } from '@stream-io/video-react-sdk';
-import { createContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 
 interface User {
@@ -22,8 +22,8 @@ interface UserProviderProps {
 }
 
 export const UserProvider =(props: UserProviderProps) => {
-    const [user, setUser] = React.useState<User | null>(null);
-    const [client, setClient] = React.useState<StreamVideoClient | undefined>(undefined);
+    const [user, setUser] = useState<User | null>(null);
+    const [client, setClient] = useState<StreamVideoClient | undefined>(undefined);
 
     return (
         <UserContext.Provider value={{user, setUser, client, setClient}}>
@@ -31,3 +31,11 @@ export const UserProvider =(props: UserProviderProps) => {
         </UserContext.Provider>
     )
 }
+
+export const useUser = () => {
+    const context = useContext(UserContext);
+    if (context === undefined) {
+      throw new Error('useUser must be used within a UserProvider');
+    }
+    return context;
+  }
