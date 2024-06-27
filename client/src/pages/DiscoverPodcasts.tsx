@@ -1,9 +1,14 @@
 import Layout from "../components/Layout/Layout"
+import { StreamVideoClient } from '@stream-io/video-react-sdk';
+
 
 const DiscoverPodcasts = () => {
   return (
-    <Layout>DiscoverPodcast
+    <StreamVideoClient client={}>
+       <Layout>DiscoverPodcast
     </Layout>
+    </StreamVideoClient>
+
   )
 }
 

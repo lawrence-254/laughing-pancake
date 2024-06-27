@@ -65,12 +65,16 @@ const podcastData = [
 
 import Layout from '../components/Layout/Layout';
 import PodcastList from '../components/containers/PodcastList';
+import { StreamVideoClient } from '@stream-io/video-react-sdk';
+
 
 const Home = () => {
   return (
+    <StreamVideoClient client={}>
     <Layout>
       <PodcastList podcastData={podcastData} />
     </Layout>
+    </StreamVideoClient>
   );
 };
 
