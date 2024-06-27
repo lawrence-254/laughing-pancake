@@ -55,7 +55,7 @@ const MobileMenuButton = styled.button`
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState<string>('Home');
-  const isLoggedIn: boolean = false;
+  const isLoggedIn: boolean = true;
   const linkTitles: string[] = isLoggedIn
     ? ['Home', 'My Podcasts', 'Favorite Podcast', 'Podcasts', 'My Account']
     : ['Home', 'Podcasts', 'Login'];
